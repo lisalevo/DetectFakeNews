@@ -24,7 +24,7 @@ def makeQueryUrl(query, sources=None, domains=None, fromDate=None, toDate=None, 
         queryParts["from"] = fromDate
     
     if (toDate is None):
-        toDate = "2017-01-22"
+        toDate = "2018-01-22"
     queryParts["to"] = toDate
     
     if (language is not None):
