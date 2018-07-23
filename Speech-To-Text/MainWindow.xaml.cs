@@ -91,6 +91,10 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
 
         #endregion Events
 
+        private FileStream ostrm;
+        private StreamWriter writer;
+        private TextWriter oldOut = Console.Out;
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance is microphone client short phrase.
         /// </summary>
@@ -323,7 +327,7 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
             // Set the default choice for the group of checkbox.
             this._micRadioButton.IsChecked = true;
 
-            this.SubscriptionKey = this.GetSubscriptionKeyFromIsolatedStorage();
+            this.SubscriptionKey = this.GetSubscriptionKeyFromIsolatedStorage();      
         }
 
         /// <summary>
@@ -591,12 +595,24 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
         /// <param name="e">The <see cref="SpeechResponseEventArgs"/> instance containing the event data.</param>
         private void WriteResponseResult(SpeechResponseEventArgs e)
         {
+            try
+            {
+                ostrm = new FileStream("./Transcript.txt", FileMode.Append, FileAccess.Write);
+                writer = new StreamWriter(ostrm);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Cannot open Transcript.txt for writing");
+                Console.WriteLine(ex.Message);
+                return;
+            }
+            Console.SetOut(writer);
             if (e.PhraseResponse.Results.Length == 0)
             {
                 this.WriteLine("No phrase response is available.");
             }
             else
-            {
+            {             
                 this.WriteLine("********* Final n-BEST Results *********");
                 for (int i = 0; i < e.PhraseResponse.Results.Length; i++)
                 {
@@ -605,11 +621,16 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
                         i, 
                         e.PhraseResponse.Results[i].Confidence,
                         e.PhraseResponse.Results[i].DisplayText);
+                    
+                    Console.WriteLine(e.PhraseResponse.Results[i].DisplayText);                  
                 }
-
                 this.WriteLine();
+                Console.SetOut(oldOut);
+                writer.Close();
+                ostrm.Close();
             }
         }
+
 
         /// <summary>
         /// Called when a final response is received;
@@ -683,9 +704,9 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
         /// <param name="e">The <see cref="PartialSpeechResponseEventArgs"/> instance containing the event data.</param>
         private void OnPartialResponseReceivedHandler(object sender, PartialSpeechResponseEventArgs e)
         {
-            this.WriteLine("--- Partial result received by OnPartialResponseReceivedHandler() ---");
-            this.WriteLine("{0}", e.PartialResult);
-            this.WriteLine();
+            //this.WriteLine("--- Partial result received by OnPartialResponseReceivedHandler() ---");
+            //this.WriteLine("{0}", e.PartialResult);
+            //this.WriteLine();
         }
 
         /// <summary>
@@ -867,7 +888,7 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
 
             this._logText.Text = string.Empty;
             this._startButton.IsEnabled = true;
-            this._radioGroup.IsEnabled = true;
+            this._radioGroup.IsEnabled = true;    
         }
     }
 }
