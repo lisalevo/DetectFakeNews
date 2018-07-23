@@ -38,14 +38,14 @@ def findBlurbWithClaim(url, claim):
 
     try:
         # Download the content of each link
-        articleObj = Article(url=webResultUrl, language="en")
+        articleObj = Article(url=url, language="en")
         articleObj.download()
         articleObj.parse()
 
         articleText = articleObj.text
         paragraphs = articleText.split("\n")
 
-        print("Found " + str(len(paragraphs)) + " paragraphs in article:\n" + webResultUrl)
+        print("Found " + str(len(paragraphs)) + " paragraphs in article:\n" + url)
         for p in xrange(0, len(paragraphs)):
             print(paragraphs[p])
 
