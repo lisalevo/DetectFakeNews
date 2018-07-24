@@ -1,3 +1,4 @@
+from blacklisted import blacklistedDomains
 import json
 import newspaper
 from newspaper import Article
@@ -32,6 +33,12 @@ def makeQueryUrl(query, count=None, offset=None, mkt="en-US", safesearch=None):
     print(queryParts)
     return baseQueryUrl + "?" + urllib.urlencode(queryParts)
 
+def isSafe(url):
+    for domain in blacklistedDomains:
+        if (url.find(domain) != -1):
+            return False
+    
+    return True
 
 def getArticlesForQuery(query):
     results = []
@@ -43,6 +50,7 @@ def getArticlesForQuery(query):
     for i in xrange(0, len(webResults)):
         webResultUrl = webResults[i]["url"]
         results.append(webResultUrl)
-        return
+
+    results = [result for result in results if isSafe(result)]
     return results
 
