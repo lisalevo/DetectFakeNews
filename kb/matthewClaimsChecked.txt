@@ -1,0 +1,34 @@
+Checking matthews claims...
+
+{'claim': 'we are finally seeing rising wages',
+ 'similarity': 0.5619402967455227,
+ 'snippet': ' So that\'s about as bullish as it gets. Wages are rising and, importantly, not just for those with technical skills but also workers at the low end of the pay scale.  A wonky economic idea called the "marginal propensity to consume" is more or less behind why lowest-earning workers getting raises is good. MPC basically says that someone who goes from making $11 to $12 an hour is more likely than someone going from $25 to $26 an hour to spend that additional $1/hour of income, which for an economy largely based on consumer spending is good.',
+ 'url': u'http://www.businessinsider.com/beige-book-wage-indicators-pointing-up-2016-4'}
+{'claim': 'African American unemployment stands at the lowest rate ever recorded',
+ 'similarity': 0.8028286794811638,
+ 'snippet': '"African-American unemployment stands at the lowest rate ever recorded, and Hispanic American unemployment has also reached the lowest levels in history."  -Trump  THE FACT CHECKER | This is a flip-flop by Trump. During the 2016 campaign, Trump used to claim a Four-Pinocchio statistic that 58 percent of African-American youth was unemployed. The official Bureau of Labor Statistics unemployment rate for black youth at the time was 19.2 percent -- about one-third of the rate used by Trump. Now that he\'s president, Trump appears all too happy to cite the unemployment rate for African Americans, bragging that it\'s the best since the turn of the century.',
+ 'url': u'https://www.washingtonpost.com/politics/2018/live-updates/trump-white-house/fact-checking-and-analysis-of-trumps-state-of-the-union-2018-address/fact-check-african-american-unemployment/'}
+{'claim': 'and Hispanic American unemployment has also reached the lowest levels in history',
+ 'similarity': 0,
+ 'snippet': None,
+ 'url': None}
+{'claim': 'Small-business confidence is at an all-time high',
+ 'similarity': 0.8435751759901396,
+ 'snippet': ' The NFIB survey is one of a slew of readings -- such as consumer confidence and manufacturer surveys from the various Federal Reserve branches -- that have improved over the past year. So far, that has contributed to a solid increase in economic activity, but not exceeding the long-term trend for the post-recession recovery.',
+ 'url': u'http://www.businessinsider.com/small-business-optimism-tax-reform-record-level-2018-1'}
+{'claim': 'The stock market has smashed one record after another',
+ 'similarity': 0.7497147383327708,
+ 'snippet': 'President Trump is touting the stock market\'s gains under his leadership, but the record is more complicated than he acknowledges.  "The stock market has smashed one record after another, gaining $8 trillion in value in just this short period of time," he said. "That is great news for Americans\' 401k, retirement, pension, and college savings accounts."',
+ 'url': u'https://www.washingtonpost.com/politics/2018/live-updates/trump-white-house/fact-checking-and-analysis-of-trumps-state-of-the-union-2018-address/trump-touts-the-stock-market-but-the-record-is-more-complicated/'}
+{'claim': 'we enacted the biggest tax cuts and reforms in American history',
+ 'similarity': 0.7691832006029683,
+ 'snippet': ' Post national reporters Ashley Parker and Michael Scherer write that Trump aides say "he will deliver a unifying speech on American values and patriotism, one that touches on everything from the just-passed Republican tax plan and the new immigration proposal to trade, infrastructure and national security. The question is whether the swirl of conflict and diversion that has monopolized so much of his first year in office will distract from the message he is trying to deliver."',
+ 'url': u'https://www.washingtonpost.com/politics/2018/live-updates/trump-white-house/fact-checking-and-analysis-of-trumps-state-of-the-union-2018-address/fact-check-biggest-tax-cut-in-u-s-history/'}
+{'claim': 'we nearly doubled the standard deduction for everyone',
+ 'similarity': 0.7226888739884294,
+ 'snippet': " The upshot is that for many taxpayers itemizing would become less attractive, leading additional numbers to claim the new, increased standard deduction instead.  Of course, for taxpayers who already claim the standard deduction, the tax bill won't impact the way they file. And for those who are affected, the change won't be permanent since many of the bills individual provisions expire after 2025.",
+ 'url': u'http://time.com/money/5072112/gop-tax-bill-standard-deduction/'}
+{'claim': 'We also doubled the child tax credit.',
+ 'similarity': 0.7735041730841242,
+ 'snippet': ' The earned income threshold for the refundable credit is lowered to $2,500.  The beginning credit phaseout for the CTC increases to $200,000 ($400,000 for joint filers). The phaseout also applies to the new family tax credit.  The child must have a valid SSN to claim the nonrefundable and refundable credit.  Prior to the TCJA, the taxpayer who was eligible to claim the child\'s dependent exemption was also the one eligible to claim the CTC. In turn, the taxpayer and child had to meet several "tests" for the one to be considered the dependent of the other.',
+ 'url': u'https://www.hrblock.com/tax-center/irs/tax-reform/new-child-tax-credit/'}

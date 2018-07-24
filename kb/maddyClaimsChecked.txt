@@ -1,0 +1,27 @@
+Checking maddys claims...
+
+{'q': 'Since the election, we have created 2.4 million new jobs, including 200,000 new jobs in manufacturing alone', 'count': '20', 'mkt': 'en-US'}
+{'claim': 'Since the election, we have created 2.4 million new jobs, including 200,000 new jobs in manufacturing alone',
+ 'similarity': 0.6758370965956466,
+ 'snippet': ' From Paul: "Sometimes they are in bitter fights with Trump, challenging his nationalist policy approach as an affront to traditional conservatism while also questioning his mental fitness for office. Other times they drift into a deep public swoon for the president that seems to directly contradict their previous criticism."  Check back here for frequent updates on the speech, including real-time fact-checking and analysis of what the president says on key issues like the economy, national security and infrastructure.',
+ 'url': u'https://www.washingtonpost.com/politics/2018/live-updates/trump-white-house/fact-checking-and-analysis-of-trumps-state-of-the-union-2018-address/fact-check-2-4-million-jobs/'}
+{'q': 'After years and years of wage stagnation, we are finally seeing rising wages. Unemployment claims have hit a 45-year low', 'count': '20', 'mkt': 'en-US'}
+{'claim': 'After years and years of wage stagnation, we are finally seeing rising wages. Unemployment claims have hit a 45-year low',
+ 'similarity': 0.8100623041146756,
+ 'snippet': " There are some easy lessons here. First, low unemployment is a low-income worker's best friend. Second, in the last two years, minimum-wage hikes raised income for the poor without, it seems, destroying jobs or raising the unemployment rate. Third, the U.S. economy seems capable of producing broadly shared income growth, at least late into a recovery cycle, despite the many well-founded fears that rich, educated workers are leaving their poorer, less-educated peers in the dust.  What nobody can say, however, is whether this happy trend is durable. Will a recession strike and wipe out these gains for the poor? Will minimum-wage increases prove to be a one-off moment of income growth for the poor? Will higher wages for low-skill workers ultimately accelerate the automation of their jobs, since employers get more labor savings from replacing an expensive job than a cheap one?  Nobody knows. But for now, wage growth for the poor is the happiest story nobody is talking about.  We want to hear what you think. Submit a letter to the editor or write to letters@theatlantic.com.",
+ 'url': u'https://www.theatlantic.com/business/archive/2017/03/wages-rising/519114/'}
+{'q': 'The stock market has smashed one record after another, gaining $8 trillion and more in value in just this short amount of time', 'count': '20', 'mkt': 'en-US'}
+{'claim': 'The stock market has smashed one record after another, gaining $8 trillion and more in value in just this short amount of time',
+ 'similarity': 0.8602822445971878,
+ 'snippet': ' "The stock market has smashed one record after another, gaining $8 trillion in value in just this short period of time," he said. "That is great news for Americans\' 401k, retirement, pension, and college savings accounts."',
+ 'url': u'https://www.washingtonpost.com/politics/2018/live-updates/trump-white-house/fact-checking-and-analysis-of-trumps-state-of-the-union-2018-address/trump-touts-the-stock-market-but-the-record-is-more-complicated/'}
+{'q': 'Americans 401k, retirement, pension, and college-savings accounts have gone through the roof. And just as I promised the American people from this podium 11 months ago, we enacted the biggest tax cuts and reforms in American history. Our massive tax cuts provide tremendous relief for the middle class and small businesses. To lower tax rates for hardworking Americans, we nearly doubled the standard deduction for everyone', 'count': '20', 'mkt': 'en-US'}
+{'claim': 'Americans 401k, retirement, pension, and college-savings accounts have gone through the roof. And just as I promised the American people from this podium 11 months ago, we enacted the biggest tax cuts and reforms in American history. Our massive tax cuts provide tremendous relief for the middle class and small businesses. To lower tax rates for hardworking Americans, we nearly doubled the standard deduction for everyone',
+ 'similarity': 0,
+ 'snippet': None,
+ 'url': None}
+{'q': 'Now, the first $24,000 earned by a married couple is completely tax-free', 'count': '20', 'mkt': 'en-US'}
+{'claim': 'Now, the first $24,000 earned by a married couple is completely tax-free',
+ 'similarity': 0,
+ 'snippet': None,
+ 'url': None}
