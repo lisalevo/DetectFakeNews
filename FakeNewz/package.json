@@ -20,7 +20,12 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@clr/angular": "^0.12.5",
+    "@clr/icons": "^0.12.5",
+    "@clr/ui": "^0.12.5",
+    "@webcomponents/custom-elements": "^1.0.0",
     "core-js": "^2.5.4",
+    "ng-zorro-antd": "^1.2.0",
     "rxjs": "^6.0.0",
     "videogular2": "^6.3.0",
     "zone.js": "^0.8.26"

@@ -15,6 +15,14 @@ import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from 'videogular2/buffering';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [
@@ -27,8 +35,8 @@ import { VgBufferingModule } from 'videogular2/buffering';
     FactCheckingPanelComponent,
     FactPaneComponent,
   ],
-  imports: [BrowserModule, RoutingModule, VgCoreModule, VgControlsModule, VgOverlayPlayModule, VgBufferingModule],
-  providers: [],
+  imports: [BrowserModule, RoutingModule, VgCoreModule, VgControlsModule, VgOverlayPlayModule, VgBufferingModule, BrowserAnimationsModule, FormsModule, HttpClientModule, NgZorroAntdModule],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
