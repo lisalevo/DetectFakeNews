@@ -1,0 +1,4 @@
+**/glove.*.txt
+**/GoogleNews-vectors-negative300.bin
+**/*.pyc
+
