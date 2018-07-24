@@ -57,12 +57,14 @@ def isSafe(url):
             return False
         if (url.find("youtube") != -1):
             return False
+        if (url.find("live-updates") != -1):
+            return False
     
     return True
 
 def getArticlesForQuery(query):
     results = []
-    myQueryUrl = makeQueryUrl(query, count=20)
+    myQueryUrl = makeQueryUrl(query, count=50)
     req = requests.get(myQueryUrl, headers=azureApiHeaders)
     apiOutput = json.loads(req.content)
     webResults = apiOutput["webPages"]["value"]
