@@ -46,12 +46,16 @@ def findBlurbWithClaim(url, claim, tags):
     blurb = None
 
     try:
+        print("Parsing: " + url)
         # Download the content of each link
         articleObj = Article(url=url, language="en")
         articleObj.download()
         articleObj.parse()
 
         articleText = articleObj.text
+        if (len(articleText) < 500):
+            return None
+        
         paragraphs = []
         ps = articleText.split("\n")
         for p in xrange(0, len(ps)):
@@ -62,6 +66,8 @@ def findBlurbWithClaim(url, claim, tags):
         for p in xrange(0, len(paragraphs)):
             print(paragraphs[p] + "\n")
 
+        blurb = ""
+
     except newspaper.article.ArticleException:
         # Error loading article
         blurb = None
@@ -71,22 +77,22 @@ def findBlurbWithClaim(url, claim, tags):
 
 def getBlurbsForClaim(claim, tags):
     query = claim
-    sources = ["abc-news"]
-
+    
+    sources = ["bbc-news"]
     myQueryUrl = makeQueryUrl(query, sources=sources)
     print("Query url: " + myQueryUrl)
     req = requests.get(myQueryUrl, headers=apiHeaders)
     print(req)
     apiOutput = json.loads(req.content)
-    print(apiOutput)
     results = apiOutput["articles"]
     print("Found " + str(len(results)) + " results")
 
     for i in xrange(1, len(results)):
         url = results[i]["url"]
-        findBlurbWithClaim(url, claim, tags)
-        return
+        blurb = findBlurbWithClaim(url, claim, tags)
+        if blurb is not None:
+            return
 
 #getBlurbsForClaim("Since the election, we have created 2.4 million new jobs, including 200,000 new jobs in manufacturing alone.",
-getBlurbsForClaim("bitcoin",
+getBlurbsForClaim("2018 jobs report",
     ["Trump", "November 2016", "jobs"])
