@@ -2,6 +2,7 @@ function search(tags) {
 
   var url = "https://fred.stlouisfed.org/search?st=";
   var i;
+
   for(i=0; i < tags.length; i++) {
       url += tags[i]
 
@@ -23,6 +24,7 @@ function getImage(url) {
     if (!error && response.statusCode == 200) {
       let $ = cheerio.load(html);
     var result = $('#series-pager > tbody > tr:nth-child(1) > td > div.col-xs-12.col-sm-10').html().trim();
+
       //var result = $('#series-pager > tbody > tr:nth-child(1) > td > div.col-xs-12.col-sm-10').html();
       //var graph_url = result.getElementsByTagName("a")[0].getAttribute("href")
       //var resultJSON = JSON.parse(result);
@@ -30,11 +32,20 @@ function getImage(url) {
     var link = results.split('"')[1];
     link = "https://fred.stlouisfed.org" + link
     console.log(link);
+
+    screenshot(link);
     }
-
-  });
-
+    });
 
 }
 
-getImage()
+const puppeteer = require('puppeteer');
+async function screenshot(url) {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(url);
+    await page.screenshot({path: 'image.png'});
+    await browser.close();
+}
+
+getImage();
