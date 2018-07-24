@@ -33,6 +33,7 @@
 
 namespace Microsoft.CognitiveServices.SpeechRecognition
 {
+    using SpeechToTextWPFSample;
     using System;
     using System.ComponentModel;
     using System.Configuration;
@@ -41,6 +42,8 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
     using System.IO.IsolatedStorage;
     using System.Runtime.CompilerServices;
     using System.Windows;
+    using Newtonsoft.Json;
+    using System.Threading;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -94,6 +97,12 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
         private FileStream ostrm;
         private StreamWriter writer;
         private TextWriter oldOut = Console.Out;
+
+        private static int statementCount = 0;
+
+        private Statements statements = new Statements();
+
+        Stopwatch timer = Stopwatch.StartNew();
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is microphone client short phrase.
@@ -595,6 +604,8 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
         /// <param name="e">The <see cref="SpeechResponseEventArgs"/> instance containing the event data.</param>
         private void WriteResponseResult(SpeechResponseEventArgs e)
         {
+            Statement statement = new Statement();                
+
             try
             {
                 ostrm = new FileStream("./Transcript.txt", FileMode.Append, FileAccess.Write);
@@ -622,8 +633,14 @@ namespace Microsoft.CognitiveServices.SpeechRecognition
                         e.PhraseResponse.Results[i].Confidence,
                         e.PhraseResponse.Results[i].DisplayText);
                     
-                    Console.WriteLine(e.PhraseResponse.Results[i].DisplayText);                  
+                   // Console.WriteLine(e.PhraseResponse.Results[i].DisplayText);
+                    statement.id = statementCount++;
+                    statement.statementValue = e.PhraseResponse.Results[i].DisplayText;
+                    statement.timeInSeconds = timer.ElapsedMilliseconds / 1000;
+                    statements.statements.Add(statement);
                 }
+                Console.WriteLine(JsonConvert.SerializeObject(statement));
+
                 this.WriteLine();
                 Console.SetOut(oldOut);
                 writer.Close();
