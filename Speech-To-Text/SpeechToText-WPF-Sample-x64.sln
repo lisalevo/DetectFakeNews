@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechToText-WPF-Sample-x64", "SpeechToText-WPF-Sample-x64.csproj", "{8B78DAA4-1359-48A3-A9DF-B3274F554619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B78DAA4-1359-48A3-A9DF-B3274F554619}.Debug|x64.ActiveCfg = Debug|x64
+		{8B78DAA4-1359-48A3-A9DF-B3274F554619}.Debug|x64.Build.0 = Debug|x64
+		{8B78DAA4-1359-48A3-A9DF-B3274F554619}.Release|x64.ActiveCfg = Release|x64
+		{8B78DAA4-1359-48A3-A9DF-B3274F554619}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02F4EA42-23B0-4AE7-A4BC-94BC0ED85FCF}
+	EndGlobalSection
+EndGlobal
