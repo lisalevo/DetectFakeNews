@@ -44,7 +44,7 @@ async function screenshot(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
-    await page.screenshot({path: 'image.png'});
+    await page.screenshot({path: 'image.png', clip:{x: 25, y:350, width: 750, height: 450} });
     await browser.close();
 }
 
