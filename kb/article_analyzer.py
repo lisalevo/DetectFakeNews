@@ -11,9 +11,12 @@ import spacy
 
 nlp = spacy.load("en")
 stopWords = set(stopwords.words('english'))
+MIN_ARTICLE_SIZE = 600
+MIN_PARAGRAPH_SIZE = 200
+MAX_SENTENCES_PER_SNIPPET = 3
 
 def largeEnough(paragraph):
-    return len(paragraph) > 400
+    return len(paragraph) > MIN_PARAGRAPH_SIZE
 
 def allSubArrays(xs, n):
     n = len(xs)
@@ -24,11 +27,11 @@ def allSubArrays(xs, n):
 
 def getAllContiguousSentences(sentences, n):
     contiguousSentences = list(allSubArrays(sentences, n))
-    print("Found " + str(len(contiguousSentences)) + " contiguous sentences")
+    #print("Found " + str(len(contiguousSentences)) + " contiguous sentences")
     return contiguousSentences
 
 def getSpacySimilarities(docs):
-    print("Getting Spacy similarities")
+    #print("Getting Spacy similarities")
     pairwiseSimilarity = np.zeros((len(docs), len(docs)), dtype=float)
     
     query = docs[-1]
@@ -47,7 +50,7 @@ def getSpacySimilarities(docs):
 
 
 def getTfidfPairwiseSimilarities(docs):
-    print("Getting Tf-Idf similarities")
+    #print("Getting Tf-Idf similarities")
     tfidf = TfidfVectorizer().fit_transform(docs)
     # no need to normalize, since Vectorizer will return normalized tf-idf
     pairwiseSimilarity = tfidf * tfidf.T
@@ -55,7 +58,7 @@ def getTfidfPairwiseSimilarities(docs):
 
 def getMostSimilarSnippet(query, document):
     lines = [line for line in unidecode(document).split("\n")]
-    snippets = getAllContiguousSentences(lines, 5)
+    snippets = getAllContiguousSentences(lines, MAX_SENTENCES_PER_SNIPPET)
     snippets = [snippet for snippet in snippets if largeEnough(snippet)]
     snippets.append(query)
     
@@ -98,6 +101,10 @@ def getMostSimilarSnippetFromArticles(query, articleUrls):
             articleObj.download()
             articleObj.parse()
             document = articleObj.text
+            
+            if (len(document) < MIN_ARTICLE_SIZE):
+                continue
+            
             (snippet, similarityScore) = getMostSimilarSnippet(query, document)
             
             if (similarityScore > maxSimilarityFound):
@@ -113,4 +120,5 @@ def getMostSimilarSnippetFromArticles(query, articleUrls):
     snippetResult["claim"] = query
     snippetResult["url"] = urlOfMostSimilarSnippet
     snippetResult["similarity"] = maxSimilarityFound
+    snippetResult["snippet"] = mostSimilarSnippet
     return snippetResult
