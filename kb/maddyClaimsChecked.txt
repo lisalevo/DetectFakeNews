@@ -22,6 +22,7 @@ Checking maddys claims...
  'url': None}
 {'q': 'Now, the first $24,000 earned by a married couple is completely tax-free', 'count': '20', 'mkt': 'en-US'}
 {'claim': 'Now, the first $24,000 earned by a married couple is completely tax-free',
- 'similarity': 0,
- 'snippet': None,
- 'url': None}
+ 'similarity': 0.7480452169446762,
+ 'snippet': ' They say they stand to lose a significant amount of funding.  Under HR1, doubling the standard deduction would mean the first $12,000 earned by an individual and the first $24,000 earned by a married couple will be tax free.',
+ 'url': u'https://www.ktvb.com/article/news/local/nonprofits-against-tax-reform-bill/492489207'}
+ 

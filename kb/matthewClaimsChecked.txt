@@ -32,3 +32,6 @@ Checking matthews claims...
  'similarity': 0.7735041730841242,
  'snippet': ' The earned income threshold for the refundable credit is lowered to $2,500.  The beginning credit phaseout for the CTC increases to $200,000 ($400,000 for joint filers). The phaseout also applies to the new family tax credit.  The child must have a valid SSN to claim the nonrefundable and refundable credit.  Prior to the TCJA, the taxpayer who was eligible to claim the child\'s dependent exemption was also the one eligible to claim the CTC. In turn, the taxpayer and child had to meet several "tests" for the one to be considered the dependent of the other.',
  'url': u'https://www.hrblock.com/tax-center/irs/tax-reform/new-child-tax-credit/'}
+
+
+
