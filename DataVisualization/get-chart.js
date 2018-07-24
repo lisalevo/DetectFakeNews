@@ -36,7 +36,6 @@ function getImage(url) {
     screenshot(link);
     }
     });
-
 }
 
 const puppeteer = require('puppeteer');
@@ -44,7 +43,7 @@ async function screenshot(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
-    await page.screenshot({path: 'image.png'});
+    await page.screenshot({path: 'image.png', clip: {x: 10, y: 30, width: 320, height: 480}});
     await browser.close();
 }
 
