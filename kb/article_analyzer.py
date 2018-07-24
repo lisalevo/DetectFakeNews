@@ -73,8 +73,8 @@ def getMostSimilarSnippet(query, document):
         
         processedSnippets.append(filteredSentence)
 
-    pairwiseSimilarity = getTfidfPairwiseSimilarities(processedSnippets)
-    #pairwiseSimilarity = getSpacySimilarities(processedSnippets)
+    #pairwiseSimilarity = getTfidfPairwiseSimilarities(processedSnippets)
+    pairwiseSimilarity = getSpacySimilarities(processedSnippets)
     #print(pairwiseSimilarity)
 
     queryIndex = len(snippets) - 1    
