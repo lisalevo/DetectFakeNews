@@ -12,6 +12,7 @@ import spacy
 nlp = spacy.load("en")
 stopWords = set(stopwords.words('english'))
 MIN_ARTICLE_SIZE = 600
+MAX_ARTICLE_SIZE = 3000
 MIN_PARAGRAPH_SIZE = 200
 MAX_SENTENCES_PER_SNIPPET = 3
 
@@ -102,7 +103,7 @@ def getMostSimilarSnippetFromArticles(query, articleUrls):
             articleObj.parse()
             document = articleObj.text
             
-            if (len(document) < MIN_ARTICLE_SIZE):
+            if (len(document) < MIN_ARTICLE_SIZE) or (len(document) > MAX_ARTICLE_SIZE):
                 continue
             
             (snippet, similarityScore) = getMostSimilarSnippet(query, document)
@@ -112,7 +113,7 @@ def getMostSimilarSnippetFromArticles(query, articleUrls):
                 urlOfMostSimilarSnippet = url
                 mostSimilarSnippet = snippet
 
-        except newspaper.article.ArticleException:
+        except:
             # Skip article if fail to load
             continue
     

@@ -34,7 +34,6 @@ def makeQueryUrl(query, count=None, offset=None, mkt="en-US", safesearch=None):
     if (safesearch is not None):
         queryParts["safesearch"] = str(safesearch)
     
-    print(queryParts)
     return baseQueryUrl + "?" + urllib.urlencode(queryParts)
 
 def canUseArticle(url):
@@ -47,19 +46,23 @@ def canUseArticle(url):
         else:
             #print("Could not find date of article")
             return False
-    except Exception:
+    except:
         return False
 
 def isSafe(url):
     for domain in blacklistedDomains:
         if (url.find(domain) != -1):
             return False
+        if (url.find("video") != -1):
+            return False
+        if (url.find("youtube") != -1):
+            return False
     
     return True
 
 def getArticlesForQuery(query):
     results = []
-    myQueryUrl = makeQueryUrl(query, count=100)
+    myQueryUrl = makeQueryUrl(query, count=20)
     req = requests.get(myQueryUrl, headers=azureApiHeaders)
     apiOutput = json.loads(req.content)
     webResults = apiOutput["webPages"]["value"]
