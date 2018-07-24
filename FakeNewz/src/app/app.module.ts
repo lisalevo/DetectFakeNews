@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { FactCheckService } from './services/fact-check.service';
 
 registerLocaleData(en);
 
@@ -47,7 +48,7 @@ registerLocaleData(en);
     HttpClientModule,
     // NgZorroAntdModule,
   ],
-  // providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [FactCheckService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

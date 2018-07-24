@@ -1,8 +1,4 @@
 <div id="factPanel">
-  <app-fact-pane></app-fact-pane>
-  <app-fact-pane></app-fact-pane>
-  <app-fact-pane></app-fact-pane>
-  <app-fact-pane></app-fact-pane>
-  <app-fact-pane></app-fact-pane>
-  <app-fact-pane></app-fact-pane>
+
+  <app-fact-pane *ngFor="let claim of claims"></app-fact-pane>
 </div>

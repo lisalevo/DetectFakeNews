@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FactCheckService } from '../services/fact-check.service';
 
 @Component({
   selector: 'app-fact-summary',
@@ -6,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fact-summary.component.css'],
 })
 export class FactSummaryComponent implements OnInit {
-  truthValue = true;
-
   constructor() {}
 
   ngOnInit() {}
