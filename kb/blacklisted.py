@@ -1,4 +1,4 @@
-blacklistedDomains: [
+blacklistedDomains = [
     "NutritionalAnarchy.com",
     "100percentfedup.com",
     "lifenews.com",
