@@ -38,13 +38,16 @@ def makeQueryUrl(query, count=None, offset=None, mkt="en-US", safesearch=None):
     return baseQueryUrl + "?" + urllib.urlencode(queryParts)
 
 def canUseArticle(url):
-    d = articleDateExtractor.extractArticlePublishedDate(url)
-    if (type(d) == datetime.datetime):
-        d = d.date()
-        #print("Date of article = " + str(d))
-        return d <= MAX_DATE
-    else:
-        #print("Could not find date of article")
+    try:
+        d = articleDateExtractor.extractArticlePublishedDate(url)
+        if (type(d) == datetime.datetime):
+            d = d.date()
+            #print("Date of article = " + str(d))
+            return d <= MAX_DATE
+        else:
+            #print("Could not find date of article")
+            return False
+    except Exception:
         return False
 
 def isSafe(url):
