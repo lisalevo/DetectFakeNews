@@ -1,15 +1,18 @@
-.content-container {
-  display: flex; 
-  display: -webkit-flex; /* Safari */
-  flex-flow: row nowrap;
-  align-items: stretch;
-  width: 100vw;
-  height: 100vh;
+* {
+  line-height: 0%;
+}
 
-  .scrollable-container {
-    overflow-y: scroll;
-    width:24vw;
-    height:95vh;
-    margin: 1vw;
-  }
+.content {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-areas: "viewer panel" "viewer panel" "viewer panel";
+}
+
+app-video-viewer {
+  grid-area: viewer;
+}
+
+app-fact-checking-panel {
+  grid-area: panel;
+  overflow-y: scroll;
 }
