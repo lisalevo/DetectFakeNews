@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-areas: "viewer panel" "viewer panel" "viewer panel";
+  overflow: hidden;
 }
 
 app-video-viewer {
