@@ -15,10 +15,10 @@ matthew_claims = ["we are finally seeing rising wages",
 print("Checking matthews claims...\n")
 for claim in matthew_claims:
     webResults = azure_query.getArticlesForQuery(claim)
-    snippetForClaim = article_analyzer.getMostSimilarSnippetFromArticles(claim, webResults[0:10]) # Take first 10
+    snippetForClaim = article_analyzer.getMostSimilarSnippetFromArticles(claim, webResults[0:20]) # Take first 20
     pprint.pprint(snippetForClaim)
 
-
+"""
 maddys_claims = ['Since the election, we have created 2.4 million new jobs, including 200,000 new jobs in manufacturing alone',
     'After years and years of wage stagnation, we are finally seeing rising wages. Unemployment claims have hit a 45-year low',
     'The stock market has smashed one record after another, gaining $8 trillion and more in value in just this short amount of time',
@@ -31,3 +31,4 @@ for claim in maddys_claims:
     webResults = azure_query.getArticlesForQuery(claim)
     snippetForClaim = article_analyzer.getMostSimilarSnippetFromArticles(claim, webResults[0:10]) # Take first 10
     pprint.pprint(snippetForClaim)
+"""
