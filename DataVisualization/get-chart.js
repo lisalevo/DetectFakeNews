@@ -44,6 +44,7 @@ async function screenshot(url) {
     const page = await browser.newPage();
     await page.goto(url);
     await page.screenshot({path: 'image.png', clip: {x: 10, y: 30, width: 320, height: 480}});
+    await page.screenshot({path: 'image.png', clip:{x: 25, y:350, width: 750, height: 450} });
     await browser.close();
 }
 
