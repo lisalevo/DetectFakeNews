@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-fact-pane',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fact-pane.component.css'],
 })
 export class FactPaneComponent implements OnInit {
+  @Input() claim: Claim;
+
   constructor() {}
 
   ngOnInit() {}

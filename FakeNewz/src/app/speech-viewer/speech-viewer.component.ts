@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-speech-viewer',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./speech-viewer.component.css'],
 })
 export class SpeechViewerComponent implements OnInit {
-  condition = '';
+  @Input() verbalClaim: string;
 
   constructor() {}
 

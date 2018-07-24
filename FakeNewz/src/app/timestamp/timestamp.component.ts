@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-timestamp',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timestamp.component.css'],
 })
 export class TimestampComponent implements OnInit {
-  timeAsserted = '0:00';
+  @Input() timeStamp: number;
 
   constructor() {}
 

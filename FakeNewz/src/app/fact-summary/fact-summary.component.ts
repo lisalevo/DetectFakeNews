@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FactCheckService } from '../services/fact-check.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { FactCheckService } from '../services/fact-check.service';
   styleUrls: ['./fact-summary.component.css'],
 })
 export class FactSummaryComponent implements OnInit {
+  @Input() supportingDocSummary: string;
   constructor() {}
 
   ngOnInit() {}
