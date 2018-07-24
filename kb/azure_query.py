@@ -54,6 +54,3 @@ def getArticlesForQuery(query):
     results = [result for result in results if isSafe(result)]
     return results
 
-
-
-print(getArticlesForQuery("buzzfeed"))
