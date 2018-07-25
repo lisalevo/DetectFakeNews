@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
 
 
 /**
- *  this function takes in a list of tags/claims and a file path, and will return
+ * Takes in a list of tags/claims and a file path, and will return
  * a graph about the claim from Fred economics data.
  * Param: tags = list of keywords or phrases about a certain claim
  * Param: imagePath = a relative or absolute path of where the graph representing the claims is going to go
@@ -16,7 +16,7 @@ const puppeteer = require('puppeteer');
  */
 
 function getImage(tags, imagePath) {
-  var url = search(tags );
+  var url = search(tags);
   request(url, function(error, response, html) {
     if (!error && response.statusCode == 200) {
       let $ = cheerio.load(html);
@@ -24,7 +24,7 @@ function getImage(tags, imagePath) {
       var results = result.split(" ")[1]
       var link = results.split('"')[1];
       link = "https://fred.stlouisfed.org" + link;
-      screenshot(link,imagePath);
+      screenshot(link, imagePath);
     }
   });
 
