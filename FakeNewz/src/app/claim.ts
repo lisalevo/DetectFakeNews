@@ -1,7 +1,7 @@
 interface Claim {
   timeStamp: number;
   claim: string;
-  supportingDocURL: string;
-  supportingDocSummary: string;
-  supportingImg?: string;
+  similarity: number,
+  snippet: string,
+  url: string
 }
