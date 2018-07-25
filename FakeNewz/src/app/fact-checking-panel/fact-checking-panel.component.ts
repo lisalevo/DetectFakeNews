@@ -21,7 +21,9 @@ export class FactCheckingPanelComponent implements OnInit, OnChanges {
     // Add '${implements OnChanges}' to the class.
 
     if (changes['claims'] && this.claims) {
-      this.claims.subscribe();
+      this.claims.subscribe(claim => {
+        this._claims = claim;
+      });
     }
   }
 

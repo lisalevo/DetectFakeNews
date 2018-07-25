@@ -23,6 +23,8 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FactCheckService } from './services/fact-check.service';
 
+import { YoutubePlayerModule } from 'ngx-youtube-player';
+
 registerLocaleData(en);
 
 @NgModule({
@@ -46,6 +48,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    YoutubePlayerModule,
     // NgZorroAntdModule,
   ],
   providers: [FactCheckService],

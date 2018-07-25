@@ -22,6 +22,6 @@ export class FactPaneComponent implements OnInit {
     this.supportingDocURL = this.claim.supportingDocURL;
     this.supportingDocSummary = this.claim.supportingDocSummary;
     this.supportingImg = this.claim.supportingImg;
-    console.log(this.claim);
+    // console.log(this.claim);
   }
 }
