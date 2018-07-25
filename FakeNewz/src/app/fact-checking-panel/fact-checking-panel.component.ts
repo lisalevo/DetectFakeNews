@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges, HostListener, ContentChild, HostBinding } from '@angular/core';
+import { Component, OnInit, HostListener, HostBinding, AfterViewChecked } from '@angular/core';
 import { FactCheckService } from '../services/fact-check.service';
 import { Observable } from '../../../node_modules/rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from '../../../node_modules/rxjs';
   styleUrls: ['./fact-checking-panel.component.scss'],
   // host: { id: 'factPanel' },
 })
-export class FactCheckingPanelComponent implements OnInit {
+export class FactCheckingPanelComponent implements OnInit, AfterViewChecked {
   @HostBinding('id') id = 'factPanel';
   claims: Claim[] = [];
   claims$: Observable<Claim[]>;
@@ -30,9 +30,7 @@ export class FactCheckingPanelComponent implements OnInit {
     });
   }
 
-
-
- ngAfterViewChecked() {
+  ngAfterViewChecked() {
     // Called after every check of the component's view. Applies to components only.
     // Add 'implements AfterViewChecked' to the class.
     this.scrollToBottom();

@@ -4,5 +4,5 @@ interface Claim {
   similarity: number;
   snippet: string;
   url: string;
-  supportingImg?: string;
+  image?: string;
 }
