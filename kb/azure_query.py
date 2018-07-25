@@ -59,6 +59,8 @@ def isSafe(url):
             return False
         if (url.find("live-updates") != -1):
             return False
+        if (url.find(".pdf") != -1)
+            return False
     
     return True
 
