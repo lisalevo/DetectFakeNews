@@ -1,0 +1,20 @@
+* {
+  line-height: 0%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-areas: "viewer panel" "viewer panel" "viewer panel";
+  overflow: hidden;
+}
+
+app-video-viewer {
+  grid-area: viewer;
+  align-self: center;
+}
+
+app-fact-checking-panel {
+  grid-area: panel;
+  overflow-y: scroll;
+}
