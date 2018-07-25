@@ -5,16 +5,21 @@
 .content {
   display: grid;
   grid-template-columns: 65% 35%;
-  grid-template-areas: "viewer panel" "viewer panel" "viewer panel";
+  grid-template-rows: 15% 70% 15%;
+  grid-template-areas: ". panel" "viewer panel" ". panel";
   overflow: hidden;
+  align-items: stretch;
+  justify-items: stretch;
+  height: 100vh;
 }
 
 app-video-viewer {
   grid-area: viewer;
-  align-self: center;
 }
 
 app-fact-checking-panel {
   grid-area: panel;
   overflow-y: scroll;
+  padding: 1vw;
+  text-align: center;
 }

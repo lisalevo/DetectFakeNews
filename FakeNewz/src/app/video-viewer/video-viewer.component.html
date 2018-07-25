@@ -1,10 +1,1 @@
-<!-- <vg-player id="videoPlayer">
-  <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
-    <source src="../assets/DFN_StateOfTheUnionClip.mp4" type="video/mp4">
-  </video>
-</vg-player> -->
-
-<!-- <iframe id="videoPlayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/cq3NwepDLHY?enablejsapi=1%20modestbranding=1%20rel=0"
-  frameborder="0" allowfullscreen> -->
-
-<youtube-player [videoId]="id" width="720" height="405" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+<youtube-player [videoId]="id" height=100% width=100% (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>

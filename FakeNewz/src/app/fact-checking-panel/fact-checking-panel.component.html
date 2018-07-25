@@ -1,4 +1,2 @@
-<div id="factPanel">
-
-  <app-fact-pane *ngFor="let claim of _claims" [claim]=claim></app-fact-pane>
-</div>
+<app-fact-pane *ngFor="let claim of claims$ | async" [claim]=claim scroll>
+</app-fact-pane>

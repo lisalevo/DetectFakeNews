@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, HostListener, ContentChild, HostBinding } from '@angular/core';
 import { FactCheckService } from '../services/fact-check.service';
 import { Observable } from '../../../node_modules/rxjs';
 
@@ -6,22 +6,42 @@ import { Observable } from '../../../node_modules/rxjs';
   selector: 'app-fact-checking-panel',
   templateUrl: './fact-checking-panel.component.html',
   styleUrls: ['./fact-checking-panel.component.scss'],
+  // host: { id: 'factPanel' },
 })
 export class FactCheckingPanelComponent implements OnInit, OnChanges {
+  @HostBinding('id') id = 'factPanel';
   claims: Claim[] = [];
+  claims$: Observable<Claim[]>;
+
+  @HostListener('window.scrollHeight', ['$event'])
+  onscroll(event) {
+    console.log(event);
+  }
+
   constructor(private factCheckService: FactCheckService) {}
 
   ngOnInit() {
-    for (let i = 0; i < 35; i++) {
-      const claim = this.factCheckService.getClaimAtTime(i);
-      if (claim != null) this.claims.push(claim);
-    }
+    this.claims$ = this.factCheckService.getClaims();
+    this.factCheckService.getClaims().subscribe({
+      next(claim) {
+        const panel = document.getElementById('factPanel');
+        panel.scrollTop = Number.MAX_SAFE_INTEGER;
+      },
+    });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('noticed changes in panle', changes);
+  }
+
+  AfterViewChecked() {
+    // Called after every check of the component's view. Applies to components only.
+    // Add 'implements AfterViewChecked' to the class.
+    this.scrollToBottom();
+  }
 
   scrollToBottom() {
     const panel = document.getElementById('factPanel');
-    panel.scrollTop = Number.MAX_SAFE_INTEGER;
+    panel.scrollTop = panel.scrollHeight;
   }
 }

@@ -1,5 +1,7 @@
+import { FactCheckService } from './../services/fact-check.service';
 import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
 import { Observable } from '../../../node_modules/rxjs';
+import { YoutubePlayerService } from '../services/youtube-player.service';
 
 @Component({
   selector: 'app-video-viewer',
@@ -9,10 +11,11 @@ import { Observable } from '../../../node_modules/rxjs';
 export class VideoViewerComponent implements OnInit {
   player: YT.Player;
   private id = 'cq3NwepDLHY';
-  private observable = Observable.create(observer => {
-    observer.next('Starting process...');
-  });
   private intervalID;
+
+  constructor(private factCheckService: FactCheckService, private YTPlayerService: YoutubePlayerService) {}
+
+  ngOnInit() {}
 
   savePlayer(player) {
     this.player = player;
@@ -29,20 +32,11 @@ export class VideoViewerComponent implements OnInit {
       case 1:
         /* Video playing */
         this.intervalID = setInterval(() => {
+          this.factCheckService.getClaimAtTime(Number(this.player.getCurrentTime().toFixed(0)));
           console.log('current time', this.player.getCurrentTime().toFixed(0));
         }, 900);
         break;
     }
-
-    // console.log('current time', this.player.getCurrentTime());
     console.log('player state', event.data);
-  }
-  constructor() {}
-
-  ngOnInit() {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    // Add '${implements OnChanges}' to the class.
   }
 }
