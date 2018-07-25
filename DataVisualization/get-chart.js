@@ -13,11 +13,11 @@ function search(tags) {
   return url;
 }
 
-function getImage(tags) {
+function getImage(url) {
 
   var request = require('request');
   var cheerio = require('cheerio');
-  var url = search(tags);
+  var url = search(["unemployment", "rate"]);
 
 
   request(url, function (error, response, html) {
@@ -30,7 +30,9 @@ function getImage(tags) {
       //var resultJSON = JSON.parse(result);
     var results = result.split(" ")[1]
     var link = results.split('"')[1];
-    link = "https://fred.stlouisfed.org" + link;
+    link = "https://fred.stlouisfed.org" + link
+    console.log(link);
+
     screenshot(link);
     }
     });
@@ -42,8 +44,8 @@ async function screenshot(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
-    await page.screenshot({path: 'image.png', clip:{x: 25, y:325, width: 750, height: 450} });
+    await page.screenshot({path: 'image.png', clip:{x: 25, y:350, width: 750, height: 450} });
     await browser.close();
 }
 
-getImage(["unemployment rate", "usa"]);
+getImage();
