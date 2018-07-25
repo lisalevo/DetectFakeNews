@@ -9,28 +9,28 @@ export class FactCheckService {
   claim1: Claim = {
     timeStamp: 132,
     claim: 'What was said that can be proven',
-    supportingDocURL: 'http:/politico.com',
+    supportingDocURL: 'https://politico.com',
     supportingDocSummary: 'Summary of the supporting documentation.',
     supportingImg: 'https://picsum.photos/200/?random',
   };
   claim2: Claim = {
     timeStamp: 132,
     claim: 'What was said that can be proven',
-    supportingDocURL: 'http:/politico.com',
+    supportingDocURL: 'https://politico.com',
     supportingDocSummary: 'Summary of the supporting documentation.',
     supportingImg: 'https://picsum.photos/200/?random',
   };
   claim3: Claim = {
     timeStamp: 132,
     claim: 'What was said that can be proven',
-    supportingDocURL: 'http:/politico.com',
+    supportingDocURL: 'https://politico.com',
     supportingDocSummary: 'Summary of the supporting documentation.',
     supportingImg: 'https://picsum.photos/200/?random',
   };
   claim4: Claim = {
     timeStamp: 132,
     claim: 'What was said that can be proven',
-    supportingDocURL: 'http:/politico.com',
+    supportingDocURL: 'https://politico.com',
     supportingDocSummary: 'Summary of the supporting documentation.',
     supportingImg: 'https://picsum.photos/200/?random',
   };
