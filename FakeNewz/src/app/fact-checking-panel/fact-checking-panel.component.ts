@@ -15,4 +15,9 @@ export class FactCheckingPanelComponent implements OnInit {
   }
 
   checkTimeStap() {}
+
+  scrollToBottom() {
+    var panel = document.getElementById("factPanel");
+    panel.scrollTop = Number.MAX_SAFE_INTEGER;
+  }
 }
