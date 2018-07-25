@@ -17,7 +17,7 @@ function getImage(url) {
 
   var request = require('request');
   var cheerio = require('cheerio');
-  var url = search(["unemployment", "rate"]);
+  var url = search(["african american unemployment rate", "usa"]);
 
 
   request(url, function (error, response, html) {
@@ -44,7 +44,7 @@ async function screenshot(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
-    await page.screenshot({path: 'image.png', clip:{x: 25, y:350, width: 750, height: 450} });
+    await page.screenshot({path: 'image.png', clip:{x: 25, y:325, width: 750, height: 450} });
     await browser.close();
 }
 
