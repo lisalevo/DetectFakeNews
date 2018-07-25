@@ -2,6 +2,19 @@ var request = require('request');
 var cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 
+
+
+/**
+ *  this function takes in a list of tags/claims and a file path, and will return
+ * a graph about the claim from Fred economics data.
+ * Param: tags = list of keywords or phrases about a certain claim
+ * Param: imagePath = a relative or absolute path of where the graph representing the claims is going to go
+ * Returns: Nothing, but will take a picture of the graph representing the given claims and place it whereever the
+ * imageURL points to
+ * Example getImage(["african american unemployment", "rate"] , 'image.png'); will put a picture of unemployment rate of african
+ * males 20 and over in this folder as image.py
+ */
+
 function getImage(tags, imagePath) {
   var url = search(tags );
   request(url, function(error, response, html) {
@@ -46,7 +59,3 @@ async function screenshot(url, imagePath) {
   });
   await browser.close();
 }
-
-//this function takes in a list of tags/claims and a file path, and will return
-// a graph about the claim from Fred economics data.
-getImage(["african american unemployment", "rate"] , 'image.png');
