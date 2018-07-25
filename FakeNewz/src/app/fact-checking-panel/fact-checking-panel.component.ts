@@ -25,7 +25,11 @@ export class FactCheckingPanelComponent implements OnInit, AfterViewChecked {
     this.factCheckService.getClaims().subscribe({
       next(claim) {
         const panel = document.getElementById('factPanel');
-        panel.scrollTop = Number.MAX_SAFE_INTEGER;
+        panel.scroll({
+          top: panel.scrollHeight,
+          left: 0,
+          behavior: 'smooth'
+        });
       },
     });
   }
@@ -40,7 +44,7 @@ export class FactCheckingPanelComponent implements OnInit, AfterViewChecked {
     const panel = document.getElementById('factPanel');
     panel.scroll({
       top: panel.scrollHeight,
-      left: 0, 
+      left: 0,
       behavior: 'smooth'
     });
   }
