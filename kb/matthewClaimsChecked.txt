@@ -64,4 +64,9 @@ Checking matthews claims...
 {'claim': 'we nearly doubled the standard deduction for everyone',
  'similarity': 0.7317973911795083,
  'snippet': ' The top individual rate is expected to be lowered from 39.6 percent to 35 percent, while the lowest rate is expected to be increased from 10 percent to 12 percent. However, the increase in the standard deduction is designed to prevent anyone in the 10 percent bracket from paying more taxes.  The framework document was only developed by Republicans, but Trump has been reaching out to Democrats in an effort to get their support on tax reform as well.  "It\'s time for both parties to come together and do what is right for the American people and the nation that we all love."',
- 'url': u'http://thehill.com/policy/finance/352473-trump-tax-plan-
+ 'url': u'http://thehill.com/policy/finance/352473-trump-tax-plan-Checking matthews claims...
+
+{'claim': 'We also doubled the child tax credit.',
+ 'similarity': 0.7778124613113094,
+ 'snippet': " Rubio said the credit should be able to count against payroll taxes so taxpayers who don't income tax can still be able to claim the benefit.  When President Donald Trump unveiled his tax reform plan Sept. 27, he called for a substantially increased child tax credit, though he didn't offer any specifics on the number.  He said his plan would cut taxes for the middle class and make the tax code simpler.",
+ 'url': u'https://www.upi.com/Top_News/US/2017/10/25/Ivanka-Trump-Republican-lawmakers-push-double-child-tax-credit/3441508967874/'}
