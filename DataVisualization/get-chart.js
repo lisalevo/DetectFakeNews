@@ -13,11 +13,11 @@ function search(tags) {
   return url;
 }
 
-function getImage(url) {
+function getImage(tags) {
 
   var request = require('request');
   var cheerio = require('cheerio');
-  var url = search(["african american unemployment rate", "usa"]);
+  var url = search(tags);
 
 
   request(url, function (error, response, html) {
@@ -30,9 +30,7 @@ function getImage(url) {
       //var resultJSON = JSON.parse(result);
     var results = result.split(" ")[1]
     var link = results.split('"')[1];
-    link = "https://fred.stlouisfed.org" + link
-    console.log(link);
-
+    link = "https://fred.stlouisfed.org" + link;
     screenshot(link);
     }
     });
@@ -48,4 +46,4 @@ async function screenshot(url) {
     await browser.close();
 }
 
-getImage();
+getImage(["unemployment rate", "usa"]);
