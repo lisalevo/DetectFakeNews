@@ -8,24 +8,17 @@ import { Observable } from '../../../node_modules/rxjs';
   styleUrls: ['./fact-checking-panel.component.scss'],
 })
 export class FactCheckingPanelComponent implements OnInit, OnChanges {
-  claims: Observable<Claim[]>;
-  _claims: Claim[];
+  claims: Claim[] = [];
   constructor(private factCheckService: FactCheckService) {}
 
   ngOnInit() {
-    this._claims = this.factCheckService.getClaims();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    // Add '${implements OnChanges}' to the class.
-
-    if (changes['claims'] && this.claims) {
-      this.claims.subscribe(claim => {
-        this._claims = claim;
-      });
+    for (let i = 0; i < 35; i++) {
+      const claim = this.factCheckService.getClaimAtTime(i);
+      if (claim != null) this.claims.push(claim);
     }
   }
+
+  ngOnChanges(changes: SimpleChanges): void {}
 
   scrollToBottom() {
     const panel = document.getElementById('factPanel');
