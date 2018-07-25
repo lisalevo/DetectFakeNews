@@ -24,4 +24,9 @@ export class FactCheckingPanelComponent implements OnInit, OnChanges {
       this.claims.subscribe();
     }
   }
+
+  scrollToBottom() {
+    const panel = document.getElementById('factPanel');
+    panel.scrollTop = Number.MAX_SAFE_INTEGER;
+  }
 }
