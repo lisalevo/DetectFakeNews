@@ -33,10 +33,10 @@ export class VideoViewerComponent implements OnInit {
         /* Video playing */
         this.intervalID = setInterval(() => {
           this.factCheckService.getClaimAtTime(Number(this.player.getCurrentTime().toFixed(0)));
-          console.log('current time', this.player.getCurrentTime().toFixed(0));
+          //console.log('current time', this.player.getCurrentTime().toFixed(0));
         }, 900);
         break;
     }
-    console.log('player state', event.data);
+    // console.log('player state', event.data);
   }
 }

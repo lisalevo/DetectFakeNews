@@ -8,7 +8,7 @@ import { Observable } from '../../../node_modules/rxjs';
   styleUrls: ['./fact-checking-panel.component.scss'],
   // host: { id: 'factPanel' },
 })
-export class FactCheckingPanelComponent implements OnInit, OnChanges {
+export class FactCheckingPanelComponent implements OnInit {
   @HostBinding('id') id = 'factPanel';
   claims: Claim[] = [];
   claims$: Observable<Claim[]>;
@@ -30,11 +30,9 @@ export class FactCheckingPanelComponent implements OnInit, OnChanges {
     });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('noticed changes in panle', changes);
-  }
 
-  AfterViewChecked() {
+
+ ngAfterViewChecked() {
     // Called after every check of the component's view. Applies to components only.
     // Add 'implements AfterViewChecked' to the class.
     this.scrollToBottom();
