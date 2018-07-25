@@ -12,26 +12,16 @@ export class FactPaneComponent implements OnInit {
   private supportingDocSummary: string;
   private supportingImg?: string;
 
-  get claim(): Claim {
-    this.timeStamp = this.claim.timeStamp;
-    this.claimStated = this.claim.claim;
-    this.supportingDocURL = this.claim.supportingDocURL;
-    this.supportingDocSummary = this.claim.supportingDocSummary;
-    this.supportingImg = this.claim.supportingImg;
-
-    return this.claim;
-  }
-
-  @Input()
-  set claim(claim: Claim) {
-    this.timeStamp = this.claim.timeStamp;
-    this.claimStated = this.claim.claim;
-    this.supportingDocURL = this.claim.supportingDocURL;
-    this.supportingDocSummary = this.claim.supportingDocSummary;
-    this.supportingImg = this.claim.supportingImg;
-  }
+  @Input() claim: Claim;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.timeStamp = this.claim.timeStamp;
+    this.claimStated = this.claim.claim;
+    this.supportingDocURL = this.claim.supportingDocURL;
+    this.supportingDocSummary = this.claim.supportingDocSummary;
+    this.supportingImg = this.claim.supportingImg;
+    console.log(this.claim);
+  }
 }

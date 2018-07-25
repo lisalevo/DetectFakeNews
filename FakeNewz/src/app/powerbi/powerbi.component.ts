@@ -6,10 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./powerbi.component.css'],
 })
 export class PowerbiComponent implements OnInit {
-  @Input()
-  set supportingImg(supportingImg: string) {
-    // console.log(supportingImg);
-  }
+  @Input() supportingImg: string;
   constructor() {}
 
   ngOnInit() {}
