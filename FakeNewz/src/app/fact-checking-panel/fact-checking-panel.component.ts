@@ -40,6 +40,10 @@ export class FactCheckingPanelComponent implements OnInit {
 
   scrollToBottom() {
     const panel = document.getElementById('factPanel');
-    panel.scrollTop = panel.scrollHeight;
+    panel.scroll({
+      top: panel.scrollHeight,
+      left: 0, 
+      behavior: 'smooth'
+    });
   }
 }
