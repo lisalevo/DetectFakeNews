@@ -21,7 +21,7 @@ export class YoutubePlayerService {
         this.intervalID = setInterval(() => {
           this.factCheckService.getClaimAtTime(Number(player.getCurrentTime().toFixed(0)));
           console.log('current time', player.getCurrentTime().toFixed(0));
-        }, 900);
+        }, 1000);
         break;
     }
   }
