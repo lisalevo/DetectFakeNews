@@ -6,11 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./fact-pane.component.css'],
 })
 export class FactPaneComponent implements OnInit {
-  private timeStamp: number;
-  private claimStated: string;
-  private supportingDocURL: string;
-  private supportingDocSummary: string;
-  private image?: string;
+  timeStamp: number;
+  claimStated: string;
+  supportingDocURL: string;
+  supportingDocSummary: string;
+  image?: string;
 
   @Input() claim: Claim;
 
@@ -21,7 +21,7 @@ export class FactPaneComponent implements OnInit {
     this.claimStated = this.claim.claim;
     this.supportingDocURL = this.claim.url;
     this.supportingDocSummary = this.claim.snippet;
-    this.image = this.claim.image || "";
-    // console.log(this.claim); 
+    this.image = this.claim.image || '';
+    // console.log(this.claim);
   }
 }

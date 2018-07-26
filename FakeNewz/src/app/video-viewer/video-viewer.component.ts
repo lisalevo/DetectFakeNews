@@ -10,8 +10,8 @@ import { YoutubePlayerService } from '../services/youtube-player.service';
 })
 export class VideoViewerComponent implements OnInit {
   player: YT.Player;
-  private id = 'cq3NwepDLHY';
-  private intervalID;
+  id = 'cq3NwepDLHY';
+  intervalID;
 
   constructor(private factCheckService: FactCheckService, private YTPlayerService: YoutubePlayerService) {}
 
