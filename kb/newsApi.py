@@ -5,7 +5,7 @@ import requests
 import urllib
 
 apiHeaders = {}
-apiHeaders["X-Api-Key"] = "3fc778a92fd2494f92c7e9e979028675" # News API key
+apiHeaders["X-Api-Key"] = "NEWS_API_KEY" # News API key
 
 baseQueryUrl = "https://newsapi.org/v2/everything"
 def makeQueryUrl(query, sources=None, domains=None, fromDate=None, toDate=None, language="en", sortBy="relevancy", pageSize=100):
