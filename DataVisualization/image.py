@@ -13,8 +13,8 @@ def get_results(query ="", tags=[]):
 
 
 def get_query_string(query = "", tags=[]):
-    api_key = "AIzaSyCYq06CBnnF27kRI_RNnhz3S0KoQPH1cNM"
-    search_engine_key = "&cx=005712099980169065800:ug7myqa_ep0"
+    api_key = "API_KEY"
+    search_engine_key = "&{SEARCH_ENGINE_KEY}"
     query_string = "https://www.googleapis.com/customsearch/v1?key="
     query_string+=api_key
     query_string+=search_engine_key
