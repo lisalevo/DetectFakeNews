@@ -5,8 +5,7 @@ import requests
 import unidecode
 import urllib
 
-webSearchKeyA = "c7e39ef5a9a44d8cb35d00f7a8854ed6"
-webSearchKeyB = "3c30ceeaae95429880730179e42f5720"
+webSearchKeyA = "BING_WEB_SEARCH_API_KEY"
 azureApiHeaders = {}
 azureApiHeaders["Ocp-Apim-Subscription-Key"] = webSearchKeyA
 
